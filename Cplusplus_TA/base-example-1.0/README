@@ -1,0 +1,62 @@
+How to compile base-example
+
+First make sure that this file, together with the Makefile, the base-example.cpp and the dll are in a folder that is
+in the same folder hierarchy as the irrlicht-1.7.2 folder (this can be downloaded from
+http://downloads.sourceforge.net/irrlicht/irrlicht-1.7.2.zip). 
+For example, you have a folder called C++, that has the folders irrlicht-1.7.2 and base-example (where this file is).
+
+Then follow these instructions, depending on the machine you are using.
+
+WINDOWS: 
+		1. install cygwin (not forgetting to install the Devel and X11 packages)
+        2. open the makefile in a text editor / IDE / code editor (Do NOT use Word etc.)
+			- Update the IrrlichtHome and SYSTEM_NAME variables (if needed)
+			- Notepad++ probably can do it. (http://notepad-plus-plus.org/)
+		3. then run the following commands in this directory:
+			- make
+			- ./base-example.exe
+	
+
+LINUX:  
+		1. first go to the irrlicht-1.7.2/source/Irrlicht and run the command make (to compile the irrlicht library)
+        2. open the makefile in a text editor / IDE / code editor (Do NOT use openoffice etc.)
+			- Update the IrrlichtHome and SYSTEM_NAME variables (if needed)
+			- gedit, emacs, vim or nano are some of the editors that can be used
+		3. In this folder run the following commands:
+			- make
+			- ./base-example
+
+MAC 
+If you have XCode 3: 
+		1. Follow the instruction here 
+		   http://www.irrlicht3d.org/wiki/index.php?n=Main.Macintosh#no1.1.1 
+		   (Section 1.1.1 Compiling From Source With The Native Cocoa Framework) to compile the
+		   irrlicht library, where step 7 is actually "Set Active Architecture: i386". 
+		   (install XCode first in case you don't have it yet, you can find it in the App Store)
+         	2. open the makefile in a text editor / IDE / code editor (Do NOT use openoffice etc.)
+			- Update the IrrlichtHome and SYSTEM_NAME variables (if needed)
+            		- Xcode can probably do it.
+		3. execute the following commands in this directory:
+			- make
+			- ./base-example
+			
+If you have XCode 4, please replace the step one by the following steps:
+	1.	Unzip Irrlicht to a folder in this case we are unziping it at /Users/username/Code/irrlicht-1.7.2/
+	2.	Navigate to /Users/username/Code/irrlicht-1.7.2/source/Irrlicht/MacOSX/
+	3.	Open MacOSX.xcodeproj
+	4. In the Scheme drop-down menu next to "Run" and "Stop" buttons in top left corner, go to "Edit Scheme". When in "Edit Scheme" choose libirrlicht.a and go to "Run" and set "Build Configuration" to "Release".
+	5. Also make sure that when you have MacOSX selected in the project navigator on the left (is shown as a folder next to some other icons) you have the option when you select MacOSX and also when you select "libirrlicht.a" under targets as follows:
+		5.1. Set Base SDK: Latest Mac OS X (most likely Mac OS X 10.7)
+		5.2. Set Architectures: Standard (32/64 bit Intel)
+		5.3. Set "Build active architecture only" to Yes
+		5.4. Set the compiler to LLVM GCC 4.2 in the Build Settings.	
+	6. Build libirrlicht.a by hitting Run or selecting Project->Build
+
+                
+-------------------------------------------------------------------------------------------------------------------------
+
+Hopefully, this will get the base-example running.
+You can change the name of the source (cpp) file that you want to compile, and the name of the output file in the
+first lines of the Makefile that is in this folder.
+
+If you have any question, please contact the teaching assistants
